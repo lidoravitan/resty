@@ -3,7 +3,7 @@ services:
   redis:
     image: redis
   nginx:
-    name: ssl
+    container_name: nginx
     image: valian/docker-nginx-auto-ssl
     restart: on-failure
     ports:
