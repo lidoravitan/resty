@@ -14,6 +14,7 @@ services:
     environment:
       STORAGE_ADAPTER: redis
       REDIS_HOST: http://redis
+      REDIS_PORT: 6379
   
   # your application, listening on port specified in `SITES` env variable
   myapp:
