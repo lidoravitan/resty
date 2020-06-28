@@ -1,7 +1,23 @@
-version: "3"
+version: '2'
 services:
+  redis:
+    image: redis
   nginx:
-    build: .
+    image: valian/docker-nginx-auto-ssl
+    restart: on-failure
     ports:
-        - 443:443
-        - 80:80
+      - 80:80
+      - 443:443
+    volumes:
+      - ssl_data:/etc/resty-auto-ssl
+    environment:
+      SITES: '*=myapp:80'
+      STORAGE_ADAPTER: redis
+      REDIS_HOST: http://redis
+  
+  # your application, listening on port specified in `SITES` env variable
+  myapp:
+    image: lidoravitan/webit-frontend
+
+volumes:
+  ssl_data:
