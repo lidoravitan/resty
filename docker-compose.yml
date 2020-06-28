@@ -3,6 +3,9 @@ services:
   redis:
     container_name: redis
     image: redis
+  client:
+    container_name: client
+    image: airdock/redis-client
 
   nginx:
     container_name: nginx
