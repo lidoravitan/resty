@@ -11,7 +11,6 @@ services:
     volumes:
       - ssl_data:/etc/resty-auto-ssl
     environment:
-      SITES: 'myapp:80'
       STORAGE_ADAPTER: redis
       REDIS_HOST: http://redis
   
