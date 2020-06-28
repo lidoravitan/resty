@@ -11,7 +11,6 @@ services:
       - 443:443
     volumes:
       - ssl_data:/etc/resty-auto-ssl
-    environment:
 
   
   # your application, listening on port specified in `SITES` env variable
